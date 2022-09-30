@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  db:
+    container_name: "mysql-geo-container"
+    image: "mysql:8.0.30"
+    environment:
+      - MYSQL_DATABASE=geodb
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbuserpassw#
+      - MYSQL_ROOT_PASSWORD=secretpassw#
+    ports:
+      - "3306:3306"
+
+networks:
+    default:
+        driver: bridge
+    
