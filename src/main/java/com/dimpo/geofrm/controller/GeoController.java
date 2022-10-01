@@ -33,14 +33,14 @@ public class GeoController {
         return lst;
 
     }
-    @GetMapping("/geo/byid/{id}")
+    @GetMapping("/byid/{id}")
     public GeologicalClasses getById(@PathVariable("id") final Long id) {
         GeologicalClasses ret = geoService.findById(id);
 
         return ret;
 
     }
-    @GetMapping("/geo/secdto")
+    @GetMapping("/secdto")
     public List<SectionDto> getAllSection() {
         List<GeologicalClasses>  geoLst = geoService.findAll();
         List<SectionDto> secLst = ConvertDto.geoListToSecDTOList(geoLst);
